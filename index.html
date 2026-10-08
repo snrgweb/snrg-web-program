@@ -351,6 +351,54 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 }
 
 @media screen and (min-width:769px) { header.hero .hero-cta-group { display:none!important; } }
+
+/* SNRG plan explorer v2: compact, responsive overlay only. Original site unchanged. */
+.snrg-plan-overlay[hidden]{display:none!important}
+.snrg-plan-overlay{padding:12px!important;z-index:2147483000!important;align-items:center!important;justify-items:center!important}
+.snrg-plan-dialog{width:min(100%,760px)!important;max-height:calc(100dvh - 24px)!important;overflow:auto!important;border-radius:22px!important;box-shadow:0 28px 90px rgba(0,0,0,.38)!important}
+.snrg-plan-top{padding:24px 32px 20px!important}
+.snrg-plan-eyebrow{font-size:10px!important;margin-bottom:7px!important;letter-spacing:.19em!important}
+.snrg-plan-top h2{font-size:clamp(25px,3.7vw,36px)!important;margin:0 0 5px!important;line-height:1.07!important}
+.snrg-plan-top p{font-size:13px!important;line-height:1.4!important}
+.snrg-plan-close{top:12px!important;right:12px!important;width:36px!important;height:36px!important;font-size:24px!important}
+.snrg-plan-body{padding:20px 30px 17px!important}
+.snrg-plan-pricebar{padding-bottom:14px!important;gap:8px!important}
+.snrg-plan-price{font-size:38px!important;line-height:1!important}
+.snrg-plan-price small{font-size:13px!important}
+.snrg-plan-secondary{font-size:12px!important;margin-top:4px!important}
+.snrg-plan-pill{font-size:10px!important;padding:7px 10px!important}
+.snrg-plan-heading{font-size:10px!important;letter-spacing:.18em!important;margin:16px 0 10px!important;color:#777e8b!important}
+.snrg-plan-steps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+.snrg-plan-step{padding:13px 15px!important;border-radius:12px!important;min-width:0!important}
+.snrg-plan-num{width:25px!important;height:25px!important;border-radius:7px!important;font-size:10px!important;margin-bottom:6px!important}
+.snrg-plan-step h4{font-size:13px!important;line-height:1.2!important;margin:0 0 4px!important}
+.snrg-plan-step p{font-size:11.5px!important;line-height:1.35!important}
+.snrg-plan-bottom{margin-top:12px!important;padding:10px 12px!important;border-radius:12px!important;gap:10px!important;flex-wrap:nowrap!important}
+.snrg-plan-bottom-copy{font-size:12px!important;font-weight:650!important;line-height:1.3!important}
+.snrg-plan-next{min-height:40px!important;padding:9px 14px!important;border-radius:9px!important;font-size:12px!important;white-space:nowrap!important;flex-shrink:0!important}
+.snrg-plan-footnote{margin-top:8px!important;font-size:10px!important}
+@media(max-width:620px){
+ .snrg-plan-overlay{padding:8px!important}
+ .snrg-plan-dialog{max-height:calc(100dvh - 16px)!important;border-radius:17px!important}
+ .snrg-plan-top{padding:17px 18px 14px!important}
+ .snrg-plan-top h2{font-size:26px!important}
+ .snrg-plan-top p{font-size:12px!important}
+ .snrg-plan-body{padding:13px 15px 12px!important}
+ .snrg-plan-price{font-size:32px!important}
+ .snrg-plan-pricebar{padding-bottom:10px!important}
+ .snrg-plan-heading{margin:11px 0 8px!important}
+ .snrg-plan-steps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+ .snrg-plan-step{padding:10px!important}
+ .snrg-plan-num{width:21px!important;height:21px!important;margin-bottom:4px!important}
+ .snrg-plan-step h4{font-size:11.5px!important}
+ .snrg-plan-step p{font-size:10.5px!important;line-height:1.27!important}
+ .snrg-plan-bottom{padding:9px!important;margin-top:9px!important;gap:6px!important}
+ .snrg-plan-bottom-copy{font-size:10.5px!important}
+ .snrg-plan-next{min-height:38px!important;padding:8px 10px!important;font-size:11px!important;width:auto!important}
+ .snrg-plan-footnote{margin-top:5px!important;font-size:9.5px!important}
+}
+@media(max-width:360px) and (max-height:620px){.snrg-plan-top{padding:9px 13px 7px!important}.snrg-plan-top h2{font-size:21px!important}.snrg-plan-top p{font-size:10px!important}.snrg-plan-eyebrow{font-size:8px!important;margin-bottom:3px!important}.snrg-plan-body{padding:8px 10px!important}.snrg-plan-price{font-size:26px!important}.snrg-plan-secondary{font-size:10px!important}.snrg-plan-pill{font-size:9px!important;padding:4px 6px!important}.snrg-plan-heading{margin:5px 0 4px!important;font-size:9px!important}.snrg-plan-steps{gap:5px!important}.snrg-plan-step{padding:6px!important}.snrg-plan-num{width:17px!important;height:17px!important;margin-bottom:2px!important;font-size:9px!important}.snrg-plan-step h4{font-size:10px!important;margin-bottom:2px!important}.snrg-plan-step p{font-size:9px!important;line-height:1.2!important}.snrg-plan-bottom{padding:6px!important;margin-top:5px!important}.snrg-plan-bottom-copy{font-size:9px!important}.snrg-plan-next{min-height:32px!important;padding:6px!important;font-size:9px!important}.snrg-plan-close{top:7px!important;right:7px!important;width:30px!important;height:30px!important}}
+@media(max-height:680px){.snrg-plan-overlay{padding:5px!important}.snrg-plan-dialog{max-height:calc(100dvh - 10px)!important}.snrg-plan-top{padding-top:12px!important;padding-bottom:10px!important}.snrg-plan-body{padding-top:10px!important;padding-bottom:9px!important}.snrg-plan-heading{margin:8px 0 6px!important}.snrg-plan-step{padding:8px 10px!important}.snrg-plan-bottom{margin-top:7px!important}.snrg-plan-footnote{display:none!important}}
 </style>
 <meta content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches." name="description"/>
 <meta content="Bobby Frilot III" name="author"/>
@@ -478,7 +526,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Ongoing support</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-primary" href="/contact">Choose Managed</a>
+<a class="cta cta-primary" href="#snrg-plan-managed" data-snrg-plan="managed">Choose Managed</a>
 </div>
 </div>
 <div class="pricing-card" lang="en">
@@ -495,7 +543,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Documentation</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-secondary" href="/contact">Choose Ownership</a>
+<a class="cta cta-secondary" href="#snrg-plan-ownership" data-snrg-plan="ownership">Choose Ownership</a>
 </div>
 </div>
 <div class="pricing-card" lang="es">
@@ -514,7 +562,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Soporte continuo</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-primary" href="/contact">Elegir Administrado</a>
+<a class="cta cta-primary" href="#snrg-plan-managed" data-snrg-plan="managed">Elegir Administrado</a>
 </div>
 </div>
 <div class="pricing-card" lang="es">
@@ -531,7 +579,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Documentación</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-secondary" href="/contact">Elegir Propiedad</a>
+<a class="cta cta-secondary" href="#snrg-plan-ownership" data-snrg-plan="ownership">Elegir Propiedad</a>
 </div>
 </div>
 </div>
@@ -1081,34 +1129,54 @@ document.addEventListener("DOMContentLoaded", function(){
 <a href="https://www.facebook.com/profile.php?id=61587811778243" rel="me noopener noreferrer" target="_blank">SNRG WEB Facebook</a>
 </div>
 <script>
-/* Restore pricing plan explorers only. No existing markup or styling changed. */
+/* SNRG plan explorer v2 — explicit plan IDs, works with GitHub Pages and custom domains. */
 (function(){
- const plans={
-  managed:{title:'Fully Managed',eyebrow:'SNRG WEB · Website Plan',intro:'A professional small-business website built, hosted, and maintained for you.',price:'$89',unit:'/month',secondary:'First 12 months · $50/month thereafter',pill:'No upfront cost',steps:[['Tell us about your business','Share your goals, services, and the website you envision.'],['We design and build','We create your responsive website with SEO fundamentals and analytics setup.'],['Review and launch','Review the finished site and coordinate any final changes before launch.'],['We keep it running','Hosting, ongoing support, and up to five content updates each month are included.']]},
-  ownership:{title:'Full Ownership',eyebrow:'SNRG WEB · Website Plan',intro:'A custom website with ownership of the completed source files.',price:'$770',unit:'one time',secondary:'Optional managed hosting: $50/month',pill:'Own your website',steps:[['Share your vision','Tell us about your business, content, and website goals.'],['Custom development','We build a responsive, SEO-ready website tailored to your business.'],['Review and launch','Review the finished website and coordinate delivery or deployment.'],['Receive your files','Get the website source files, documentation, and 30 days of support.']]}
- };
- const overlay=document.createElement('div');overlay.className='snrg-plan-overlay';overlay.hidden=true;overlay.setAttribute('role','presentation');
- overlay.innerHTML='<div class="snrg-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="snrg-plan-title" tabindex="-1"><div class="snrg-plan-top"><button class="snrg-plan-close" type="button" aria-label="Close plan details">×</button><div class="snrg-plan-eyebrow"></div><h2 id="snrg-plan-title"></h2><p class="snrg-plan-intro"></p></div><div class="snrg-plan-body"><div class="snrg-plan-pricebar"><div><div class="snrg-plan-price"></div><div class="snrg-plan-secondary"></div></div><span class="snrg-plan-pill"></span></div><h3 class="snrg-plan-heading">How it works</h3><div class="snrg-plan-steps"></div><div class="snrg-plan-bottom"><p>Ready to discuss your website? Tell us a little about your business and we’ll help you get started.</p><a class="snrg-plan-next" href="/contact">Continue to Contact →</a></div><p class="snrg-plan-footnote">No payment is collected in this window.</p></div></div>';
- document.body.appendChild(overlay);
- const dialog=overlay.querySelector('.snrg-plan-dialog');let lastFocus=null;
- function close(){overlay.hidden=true;document.body.classList.remove('snrg-plan-open');if(lastFocus)lastFocus.focus();}
- function open(which,trigger){const p=plans[which];if(!p)return;lastFocus=trigger;
-  overlay.querySelector('.snrg-plan-eyebrow').textContent=p.eyebrow;
-  overlay.querySelector('#snrg-plan-title').textContent=p.title;
-  overlay.querySelector('.snrg-plan-intro').textContent=p.intro;
-  overlay.querySelector('.snrg-plan-price').innerHTML=p.price+' <small>'+p.unit+'</small>';
-  overlay.querySelector('.snrg-plan-secondary').textContent=p.secondary;
-  overlay.querySelector('.snrg-plan-pill').textContent=p.pill;
-  overlay.querySelector('.snrg-plan-steps').innerHTML=p.steps.map((step,i)=>'<div class="snrg-plan-step"><span class="snrg-plan-num">'+(i+1)+'</span><h4>'+step[0]+'</h4><p>'+step[1]+'</p></div>').join('');
-  overlay.hidden=false;document.body.classList.add('snrg-plan-open');dialog.focus();
- }
- overlay.querySelector('.snrg-plan-close').addEventListener('click',close);
- overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
- document.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();close();}else if(e.key==='Tab'){const f=[...dialog.querySelectorAll('button,a[href]')];const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
- document.querySelectorAll('.pricing-card .pricing-cta a').forEach(a=>{
-  const label=a.textContent.trim().toLowerCase();const which=label.includes('managed')||label.includes('administrado')?'managed':label.includes('ownership')||label.includes('propiedad')?'ownership':null;
-  if(which)a.addEventListener('click',e=>{e.preventDefault();open(which,a);});
- });
+  'use strict';
+  const content={
+    en:{managed:{name:'Fully Managed',intro:'We build it. We host it. We keep it running.',price:'$89',unit:'/month',detail:'First 12 months · then $50/month',pill:'$0 upfront',steps:[['Tell us your goals','Share your business, services and vision.'],['We build your site','Custom, responsive design with SEO setup.'],['Approve & launch','Review the site before it goes live.'],['We handle the rest','Hosting, support and 5 updates/month.']]},ownership:{name:'Full Ownership',intro:'Your website. Your files. Your control.',price:'$770',unit:'one time',detail:'Optional hosting & management: $50/month',pill:'Yours to keep',steps:[['Share your vision','Tell us what your business needs.'],['Custom development','Responsive design with SEO foundations.'],['Review & launch','Approve the finished website.'],['Receive your files','Source files, documentation & 30-day support.']]}},
+    es:{managed:{name:'Totalmente Administrado',intro:'Diseñamos, alojamos y mantenemos tu sitio.',price:'$89',unit:'/mes',detail:'Primeros 12 meses · después $50/mes',pill:'Sin pago inicial',steps:[['Cuéntanos tu idea','Comparte tu negocio y tus objetivos.'],['Creamos tu sitio','Diseño adaptable y SEO inicial.'],['Revisa y publica','Aprueba el sitio antes de lanzarlo.'],['Nos encargamos','Hosting, soporte y 5 cambios al mes.']]},ownership:{name:'Propiedad Completa',intro:'Tu sitio web. Tus archivos. Tu control.',price:'$770',unit:'pago único',detail:'Hosting y gestión opcional: $50/mes',pill:'Es tuyo',steps:[['Comparte tu visión','Cuéntanos qué necesita tu negocio.'],['Desarrollo a medida','Diseño adaptable y SEO inicial.'],['Revisa y publica','Aprueba el sitio terminado.'],['Recibe tus archivos','Código, documentación y 30 días de soporte.']]}}
+  };
+  const overlay=document.createElement('div');
+  overlay.className='snrg-plan-overlay';overlay.hidden=true;
+  overlay.innerHTML=`<section class="snrg-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="snrg-plan-title" tabindex="-1">
+    <div class="snrg-plan-top"><div class="snrg-plan-eyebrow">SNRG WEB <span aria-hidden="true">/</span> YOUR NEXT STEP</div>
+      <button class="snrg-plan-close" type="button" aria-label="Close plan details">&times;</button>
+      <h2 id="snrg-plan-title"></h2><p class="snrg-plan-intro"></p></div>
+    <div class="snrg-plan-body"><div class="snrg-plan-pricebar"><div><div class="snrg-plan-price"></div><div class="snrg-plan-secondary"></div></div><span class="snrg-plan-pill"></span></div>
+      <div class="snrg-plan-heading">FOUR SIMPLE STEPS</div><div class="snrg-plan-steps"></div>
+      <div class="snrg-plan-bottom"><span class="snrg-plan-bottom-copy">Ready to bring your website to life?</span><a class="snrg-plan-next" href="https://snrgweb.com/contact">Let's Get Started <span aria-hidden="true">→</span></a></div>
+      <div class="snrg-plan-footnote">No payment required to get in touch.</div>
+    </div></section>`;
+  document.body.appendChild(overlay);
+  const dialog=overlay.querySelector('.snrg-plan-dialog');
+  let trigger=null;
+  function close(){overlay.hidden=true;document.body.classList.remove('snrg-plan-open');if(trigger&&trigger.isConnected)trigger.focus({preventScroll:true});}
+  function open(plan,button){
+    const es=document.body.classList.contains('spanish');const lang=es?'es':'en';const p=content[lang][plan];if(!p)return;
+    trigger=button;
+    overlay.querySelector('.snrg-plan-eyebrow').textContent=es?'SNRG WEB / TU SIGUIENTE PASO':'SNRG WEB / YOUR NEXT STEP';
+    overlay.querySelector('#snrg-plan-title').textContent=p.name;
+    overlay.querySelector('.snrg-plan-intro').textContent=p.intro;
+    overlay.querySelector('.snrg-plan-price').replaceChildren(document.createTextNode(p.price+' '));
+    const unit=document.createElement('small');unit.textContent=p.unit;overlay.querySelector('.snrg-plan-price').appendChild(unit);
+    overlay.querySelector('.snrg-plan-secondary').textContent=p.detail;
+    overlay.querySelector('.snrg-plan-pill').textContent=p.pill;
+    overlay.querySelector('.snrg-plan-heading').textContent=es?'CUATRO PASOS SENCILLOS':'FOUR SIMPLE STEPS';
+    const steps=overlay.querySelector('.snrg-plan-steps');steps.replaceChildren();
+    p.steps.forEach(([heading,description],i)=>{const card=document.createElement('div');card.className='snrg-plan-step';const num=document.createElement('span');num.className='snrg-plan-num';num.textContent=String(i+1).padStart(2,'0');const h=document.createElement('h4');h.textContent=heading;const para=document.createElement('p');para.textContent=description;card.append(num,h,para);steps.appendChild(card);});
+    overlay.querySelector('.snrg-plan-bottom-copy').textContent=es?'¿Listo para comenzar tu sitio web?':'Ready to bring your website to life?';
+    overlay.querySelector('.snrg-plan-next').textContent=es?'Empezar →':"Let's Get Started →";
+    overlay.querySelector('.snrg-plan-footnote').textContent=es?'No se requiere pago para contactarnos.':'No payment required to get in touch.';
+    overlay.hidden=false;document.body.classList.add('snrg-plan-open');dialog.focus({preventScroll:true});
+  }
+  // Capture early and match an explicit attribute, not text, CSS classes, or locale.
+  document.addEventListener('click',function(e){
+    const button=e.target.closest('[data-snrg-plan]');if(!button)return;
+    e.preventDefault();e.stopPropagation();open(button.dataset.snrgPlan,button);
+  },true);
+  overlay.querySelector('.snrg-plan-close').addEventListener('click',close);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+  document.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();close();}else if(e.key==='Tab'){const focusable=[...dialog.querySelectorAll('button,a[href]')];if(e.shiftKey&&document.activeElement===focusable[0]){e.preventDefault();focusable.at(-1).focus();}else if(!e.shiftKey&&document.activeElement===focusable.at(-1)){e.preventDefault();focusable[0].focus();}}});
 })();
 </script>
 </body>
