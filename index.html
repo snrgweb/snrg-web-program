@@ -345,77 +345,74 @@ html body.spanish .comparison .comparison-table[lang="en"] { display:none !impor
 html body:not(.spanish) .comparison .comparison-table[lang="en"],
 html body.spanish .comparison .comparison-table[lang="es"] { display:block !important; }
 
-/* SNRG MOBILE HERO: ONE AUTHORITATIVE OVERRIDE. No viewport-height forcing. */
+/* MOBILE HERO RESTORED FROM index (24)(2).html: viewport-centered flex layout.
+   Preserve the approved current logo, animation, and all desktop styling.
+   The fixed navigation is measured by the existing ResizeObserver script. */
 @media (max-width:767px) {
- html body header.hero {
-   box-sizing:border-box!important;
-   display:flex!important;
-   align-items:center!important;
-   justify-content:center!important;
-   height:auto!important;
-   min-height:0!important;
-   max-height:none!important;
-   margin:var(--snrg-nav-height,88px) 0 0!important;
-   padding:0!important;
-   overflow:hidden!important;
- }
- html body header.hero > .container,
- html body header.hero .hero-wrap,
- html body header.hero .hero-stack,
- html body header.hero .hero-logo-container {
-   box-sizing:border-box!important;
-   display:flex!important;
-   flex-direction:column!important;
-   align-items:center!important;
-   justify-content:center!important;
-   width:100%!important;
-   height:auto!important;
-   min-height:0!important;
-   max-height:none!important;
-   padding:0!important;
-   margin:0!important;
- }
- html body header.hero .logo-mask {
-   display:flex!important;
-   align-items:center!important;
-   justify-content:center!important;
-   box-sizing:border-box!important;
-   width:100%!important;
-   height:clamp(250px,78vw,560px)!important;
-   min-height:0!important;
-   max-height:calc(100svh - var(--snrg-nav-height,88px) - 12px)!important;
-   overflow:hidden!important;
-   margin:0!important;
-   padding:0!important;
- }
- html body header.hero .logo-mask > a {
-   display:block!important;
-   flex:0 0 auto!important;
-   width:96vw!important;
-   max-width:100%!important;
-   line-height:0!important;
- }
- html body header.hero img.hero-logo {
-   display:block!important;
-   width:96vw!important;
-   max-width:100%!important;
-   height:auto!important;
-   aspect-ratio:1/1!important;
-   margin:0!important;
- }
- html body section.pricing {
-   margin-top:0!important;
-   padding-top:clamp(20px,4svh,34px)!important;
-   opacity:1!important;
-   visibility:visible!important;
- }
- html body section.pricing .section-title.pricing-hero {
-   opacity:1!important;
-   visibility:visible!important;
-   transform:none!important;
-   animation:none!important;
-   margin-top:0!important;
- }
+  html body header.hero {
+    box-sizing:border-box!important;
+    position:relative!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:calc(100svh - var(--snrg-nav-height,88px))!important;
+    min-height:calc(100svh - var(--snrg-nav-height,88px))!important;
+    max-height:none!important;
+    margin:var(--snrg-nav-height,88px) 0 0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  html body header.hero > .container,
+  html body header.hero .hero-wrap,
+  html body header.hero .hero-stack,
+  html body header.hero .hero-logo-container {
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    gap:0!important;
+    transform:none!important;
+  }
+  html body header.hero .logo-mask {
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  html body header.hero .logo-mask > a {
+    display:block!important;
+    flex:0 1 auto!important;
+    width:min(96vw, calc(100svh - var(--snrg-nav-height,88px) - 24px))!important;
+    max-width:100%!important;
+    line-height:0!important;
+  }
+  html body header.hero img.hero-logo {
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    aspect-ratio:1!important;
+    margin:0!important;
+    transform:none!important;
+  }
+  html body section.pricing {margin-top:0!important;padding-top:clamp(20px,4svh,34px)!important;}
+  html body section.pricing .section-title.pricing-hero {
+    opacity:1!important;visibility:visible!important;transform:none!important;
+    animation:none!important;margin-top:0!important;
+  }
 }
 </style>
 <meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
