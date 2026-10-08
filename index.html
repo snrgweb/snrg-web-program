@@ -1080,5 +1080,36 @@ document.addEventListener("DOMContentLoaded", function(){
 <a href="https://www.instagram.com/snrgweb/" rel="me noopener noreferrer" target="_blank">SNRG WEB Instagram</a>
 <a href="https://www.facebook.com/profile.php?id=61587811778243" rel="me noopener noreferrer" target="_blank">SNRG WEB Facebook</a>
 </div>
+<script>
+/* Restore pricing plan explorers only. No existing markup or styling changed. */
+(function(){
+ const plans={
+  managed:{title:'Fully Managed',eyebrow:'SNRG WEB · Website Plan',intro:'A professional small-business website built, hosted, and maintained for you.',price:'$89',unit:'/month',secondary:'First 12 months · $50/month thereafter',pill:'No upfront cost',steps:[['Tell us about your business','Share your goals, services, and the website you envision.'],['We design and build','We create your responsive website with SEO fundamentals and analytics setup.'],['Review and launch','Review the finished site and coordinate any final changes before launch.'],['We keep it running','Hosting, ongoing support, and up to five content updates each month are included.']]},
+  ownership:{title:'Full Ownership',eyebrow:'SNRG WEB · Website Plan',intro:'A custom website with ownership of the completed source files.',price:'$770',unit:'one time',secondary:'Optional managed hosting: $50/month',pill:'Own your website',steps:[['Share your vision','Tell us about your business, content, and website goals.'],['Custom development','We build a responsive, SEO-ready website tailored to your business.'],['Review and launch','Review the finished website and coordinate delivery or deployment.'],['Receive your files','Get the website source files, documentation, and 30 days of support.']]}
+ };
+ const overlay=document.createElement('div');overlay.className='snrg-plan-overlay';overlay.hidden=true;overlay.setAttribute('role','presentation');
+ overlay.innerHTML='<div class="snrg-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="snrg-plan-title" tabindex="-1"><div class="snrg-plan-top"><button class="snrg-plan-close" type="button" aria-label="Close plan details">×</button><div class="snrg-plan-eyebrow"></div><h2 id="snrg-plan-title"></h2><p class="snrg-plan-intro"></p></div><div class="snrg-plan-body"><div class="snrg-plan-pricebar"><div><div class="snrg-plan-price"></div><div class="snrg-plan-secondary"></div></div><span class="snrg-plan-pill"></span></div><h3 class="snrg-plan-heading">How it works</h3><div class="snrg-plan-steps"></div><div class="snrg-plan-bottom"><p>Ready to discuss your website? Tell us a little about your business and we’ll help you get started.</p><a class="snrg-plan-next" href="/contact">Continue to Contact →</a></div><p class="snrg-plan-footnote">No payment is collected in this window.</p></div></div>';
+ document.body.appendChild(overlay);
+ const dialog=overlay.querySelector('.snrg-plan-dialog');let lastFocus=null;
+ function close(){overlay.hidden=true;document.body.classList.remove('snrg-plan-open');if(lastFocus)lastFocus.focus();}
+ function open(which,trigger){const p=plans[which];if(!p)return;lastFocus=trigger;
+  overlay.querySelector('.snrg-plan-eyebrow').textContent=p.eyebrow;
+  overlay.querySelector('#snrg-plan-title').textContent=p.title;
+  overlay.querySelector('.snrg-plan-intro').textContent=p.intro;
+  overlay.querySelector('.snrg-plan-price').innerHTML=p.price+' <small>'+p.unit+'</small>';
+  overlay.querySelector('.snrg-plan-secondary').textContent=p.secondary;
+  overlay.querySelector('.snrg-plan-pill').textContent=p.pill;
+  overlay.querySelector('.snrg-plan-steps').innerHTML=p.steps.map((step,i)=>'<div class="snrg-plan-step"><span class="snrg-plan-num">'+(i+1)+'</span><h4>'+step[0]+'</h4><p>'+step[1]+'</p></div>').join('');
+  overlay.hidden=false;document.body.classList.add('snrg-plan-open');dialog.focus();
+ }
+ overlay.querySelector('.snrg-plan-close').addEventListener('click',close);
+ overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+ document.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();close();}else if(e.key==='Tab'){const f=[...dialog.querySelectorAll('button,a[href]')];const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+ document.querySelectorAll('.pricing-card .pricing-cta a').forEach(a=>{
+  const label=a.textContent.trim().toLowerCase();const which=label.includes('managed')||label.includes('administrado')?'managed':label.includes('ownership')||label.includes('propiedad')?'ownership':null;
+  if(which)a.addEventListener('click',e=>{e.preventDefault();open(which,a);});
+ });
+})();
+</script>
 </body>
 </html>
