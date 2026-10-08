@@ -15,11 +15,347 @@
 @media (min-width:1025px) and (max-width:1440px){
   .hero-stack{margin-top:12px!important;}
 }
+
+@media screen and (min-width:769px) {
+
+/* SNRG plan explorer: isolated styles, no changes to existing page layout */
+.snrg-plan-overlay[hidden]{display:none!important}.snrg-plan-overlay{position:fixed;inset:0;z-index:20000;background:rgba(8,11,17,.76);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;padding:clamp(12px,3vw,30px);animation:snrgPlanFade .22s ease both}
+@keyframes snrgPlanFade{from{opacity:0}to{opacity:1}}
+.snrg-plan-dialog{position:relative;width:min(100%,880px);max-height:min(92dvh,880px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:24px;box-shadow:0 36px 110px rgba(0,0,0,.34);outline:none}
+.snrg-plan-top{background:#101318;color:#fff;padding:clamp(28px,5vw,52px);position:relative;overflow:hidden}.snrg-plan-top:after{content:'';position:absolute;width:270px;height:270px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-100px;top:-120px;pointer-events:none}.snrg-plan-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#ff6565;margin-bottom:12px}.snrg-plan-top h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.055em;line-height:1.1;max-width:630px;margin:0 0 14px}.snrg-plan-top p{max-width:590px;color:#d0d3d8;font-size:clamp(14px,2.5vw,17px);line-height:1.65}.snrg-plan-close{position:absolute;top:16px;right:16px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:25px;line-height:1;cursor:pointer}.snrg-plan-close:hover{background:#ff2a2a}.snrg-plan-body{padding:clamp(24px,4.5vw,46px)}.snrg-plan-pricebar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid #e5e7eb}.snrg-plan-price{font-size:clamp(35px,5vw,50px);font-weight:900;letter-spacing:-.05em;line-height:1}.snrg-plan-price small{font-size:15px;letter-spacing:0;font-weight:600;color:#666}.snrg-plan-secondary{font-size:13px;color:#646a74;font-weight:600;margin-top:5px}.snrg-plan-pill{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#e02424;background:#fff0f0;border:1px solid #ffd4d4;padding:8px 13px;border-radius:100px}.snrg-plan-heading{font-size:clamp(21px,3vw,27px);font-weight:900;letter-spacing:-.035em;margin:26px 0 18px}.snrg-plan-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.snrg-plan-step{border:1px solid #e8e9ec;background:#fafafb;border-radius:16px;padding:21px}.snrg-plan-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:#ff2a2a;color:#fff;font-weight:900;font-size:12px;margin-bottom:12px}.snrg-plan-step h4{font-size:16px;font-weight:850;line-height:1.3;margin:0 0 6px}.snrg-plan-step p{font-size:13px;line-height:1.6;color:#5b626e;margin:0}.snrg-plan-bottom{margin-top:24px;padding:22px;border-radius:17px;background:#f5f6f8;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.snrg-plan-bottom p{font-size:13px;color:#626975;max-width:340px}.snrg-plan-next{background:#ff2a2a!important;color:white!important;border:0!important;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 24px;font-weight:800;text-decoration:none;box-shadow:0 8px 20px rgba(255,42,42,.18);transition:transform .2s,background .2s}.snrg-plan-next:hover{transform:translateY(-2px);background:#e02424!important}.snrg-plan-footnote{font-size:12px;color:#757b84;text-align:center;margin-top:14px}.snrg-plan-overlay a:focus-visible,.snrg-plan-overlay button:focus-visible{outline:3px solid #ff2a2a;outline-offset:4px}body.snrg-plan-open{overflow:hidden}@media(max-width:620px){.snrg-plan-dialog{border-radius:18px;max-height:94dvh}.snrg-plan-top{padding:34px 22px 25px}.snrg-plan-body{padding:22px}.snrg-plan-steps{grid-template-columns:1fr}.snrg-plan-step{padding:16px}.snrg-plan-bottom{padding:18px}.snrg-plan-next{width:100%}}@media(prefers-reduced-motion:reduce){.snrg-plan-overlay{animation:none}}
+
+/* SNRG HERO — LARGE, VIEWPORT-FITTED LOGO, ONE RESPONSIVE SYSTEM.
+   Header is measured by existing script; the square fits both axes and never
+   extends beneath the navigation or outside the visible viewport. */
+:root { --snrg-nav-height: 88px; --snrg-hero-inset: clamp(8px, 1.5svh, 18px); }
+html body header.hero {
+  box-sizing: border-box !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: calc(100vh - var(--snrg-nav-height)) !important;
+  height: calc(100svh - var(--snrg-nav-height)) !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: var(--snrg-nav-height) 0 0 !important;
+  padding: var(--snrg-hero-inset) 0 !important;
+  overflow: hidden !important;
+}
+html body header.hero > .container,
+html body header.hero .hero-wrap,
+html body header.hero .hero-stack,
+html body header.hero .hero-logo-container,
+html body header.hero .logo-mask {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  transform: none !important;
+}
+html body header.hero > .container { padding-inline: 0 !important; }
+html body header.hero .hero-stack,
+html body header.hero .hero-logo-container,
+html body header.hero .logo-mask {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  overflow: visible !important;
+}
+html body header.hero .logo-mask > a {
+  display: block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  line-height: 0 !important;
+}
+html body header.hero img.hero-logo {
+  display: block !important;
+  /* 94% of usable viewport height, or 94% of width: whichever is smaller.
+     No arbitrary 620px desktop ceiling; short screens shrink naturally. */
+  width: min(94vw, calc((100svh - var(--snrg-nav-height) - 2 * var(--snrg-hero-inset)) * .94), 1100px) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  aspect-ratio: 1 / 1;
+  /* Keep existing logo tunnel animation and visual effects unchanged. */
+}
+@media (max-width: 600px) {
+  :root { --snrg-hero-inset: 8px; }
+  html body header.hero img.hero-logo {
+    width: min(96vw, calc((100svh - var(--snrg-nav-height) - 16px) * .94)) !important;
+  }
+}
+@media (max-height: 480px) and (orientation: landscape) {
+  :root { --snrg-hero-inset: 4px; }
+  html body header.hero img.hero-logo {
+    width: min(78vw, calc((100svh - var(--snrg-nav-height) - 8px) * .92)) !important;
+  }
+}
+
+/* OCT 2026: MOBILE HERO ONLY — content-fitted, no full-screen dead space. */
+@media (max-width: 767px) {
+  html body header.hero {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: var(--snrg-nav-height) !important;
+    padding: clamp(10px, 2.4svh, 22px) 0 clamp(14px, 3svh, 28px) !important;
+    overflow: visible !important;
+  }
+  html body header.hero > .container,
+  html body header.hero .hero-wrap,
+  html body header.hero .hero-stack,
+  html body header.hero .hero-logo-container,
+  html body header.hero .logo-mask {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  html body header.hero img.hero-logo {
+    width: min(96vw, calc((100svh - var(--snrg-nav-height) - 48px) * .94)) !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+/* Desktop/laptop only: precision-styled comparison panel. No mobile changes. */
+@media (min-width: 768px) {
+  html body .comparison { position:relative; isolation:isolate; }
+  html body .comparison .container { max-width: 1170px; }
+  html body .comparison .section-title {
+    font-weight: 900; letter-spacing: -.045em;
+    margin-bottom: 34px;
+  }
+  html body .comparison .comparison-table {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(24,32,43,.13);
+    box-shadow: 0 24px 65px rgba(15,22,34,.095), 0 3px 12px rgba(15,22,34,.035);
+    background: #fff;
+    transform: translateZ(0);
+  }
+  html body .comparison .comparison-table::before {
+    content: ''; position:absolute; z-index:2; top:0; left:0; right:0;
+    height:3px; background:linear-gradient(90deg, #ff2a2a, #ff6b63 48%, #ff2a2a);
+    pointer-events:none;
+  }
+  html body .comparison .comparison-table .table-row:first-child {
+    background: radial-gradient(circle at 86% -50%, rgba(255,42,42,.16), transparent 43%),
+      repeating-linear-gradient(90deg, transparent 0, transparent 39px, rgba(255,255,255,.025) 40px),
+      #11151c !important;
+    min-height: 72px;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell {
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    letter-spacing: .12em !important;
+    text-transform: uppercase;
+    font-weight: 850;
+    border-color: rgba(255,255,255,.11) !important;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell:last-child {
+    color: #ff7777 !important;
+    text-shadow: 0 0 24px rgba(255,42,42,.24);
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) {
+    background: #fff !important;
+    transition: background .2s ease;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):nth-child(odd) {
+    background: #fafbfc !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):hover {
+    background: #fff4f4 !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
+    border-color: #e9ebef !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    font-size: 15px;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:first-child {
+    color: #171b22; font-weight: 750;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:nth-child(2) {
+    color: #6d7480;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:last-child {
+    color: #f32931 !important;
+    font-weight: 850;
+    background: linear-gradient(90deg, rgba(255,42,42,.025), rgba(255,42,42,.055)) !important;
+    box-shadow: inset 3px 0 0 rgba(255,42,42,.75);
+  }
+  html body .comparison .comparison-table .checkmark {
+    color: #ff2a2a !important;
+    font-size: 25px !important;
+    font-weight: 900;
+  }
+  html body .comparison .comparison-table .x { color: #b8bec8 !important; }
+}
+@media (min-width:768px) and (max-width:1024px) {
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
+    padding-top: 17px !important; padding-bottom:17px !important;
+  }
+}
+
+/* SNRG DIFFERENCE — RED EDITION / desktop & laptop only */
+@media (min-width:768px) {
+  html body .comparison {
+    position:relative !important;
+    isolation:isolate;
+    padding:clamp(64px,7vw,108px) 0 !important;
+    background:radial-gradient(ellipse at 50% 20%,#fff 0%,#f7f8fb 58%,#f0f2f6 100%) !important;
+    overflow:hidden;
+  }
+  html body .comparison:before {
+    content:'';position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(#d9dee7 1px,transparent 1px),linear-gradient(90deg,#d9dee7 1px,transparent 1px);
+    background-size:38px 38px;
+    mask-image:linear-gradient(to bottom,transparent,#000 30%,transparent 100%);
+  }
+  html body .comparison .container {max-width:1200px !important;position:relative;z-index:1}
+  html body .comparison .section-title {
+    font-size:clamp(34px,4.5vw,60px) !important;
+    font-weight:900 !important;
+    line-height:1.08 !important;
+    letter-spacing:-.065em !important;
+    margin:0 0 38px !important;
+    color:#11131a !important;
+  }
+  html body .comparison .comparison-table {
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+    overflow:hidden !important;
+    border:1px solid #dfe2e9 !important;
+    border-radius:30px !important;
+    background:#fff !important;
+    box-shadow:0 32px 75px rgba(19,25,40,.10),0 6px 15px rgba(19,25,40,.035) !important;
+  }
+  html body .comparison .comparison-table .table-row {
+    display:grid !important;
+    grid-template-columns:minmax(190px,1.45fr) minmax(160px,1fr) minmax(190px,1fr) !important;
+    align-items:stretch !important;
+    min-height:76px !important;
+    border:0 !important;
+    background:#fff !important;
+    transition:background .18s ease,transform .18s ease !important;
+  }
+  html body .comparison .comparison-table .table-row:first-child {
+    min-height:80px !important;
+    background:#11151d !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) {
+    border-top:1px solid #eceef2 !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):hover {
+    background:#f8f9fc !important;
+  }
+  html body .comparison .comparison-table .table-cell {
+    box-sizing:border-box !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:auto !important;
+    min-width:0 !important;
+    padding:18px clamp(12px,2vw,30px) !important;
+    border:0 !important;
+    border-left:1px solid #eceef2 !important;
+    background:transparent !important;
+    font-size:clamp(13px,1.18vw,16px) !important;
+    font-weight:550 !important;
+    line-height:1.3 !important;
+    color:#667080 !important;
+    text-align:center !important;
+  }
+  html body .comparison .comparison-table .table-cell:first-child {
+    justify-content:flex-start !important;
+    border-left:0 !important;
+    color:#181d27 !important;
+    font-weight:800 !important;
+    letter-spacing:-.025em !important;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell {
+    color:#fff !important;
+    background:transparent !important;
+    border-color:#343a45 !important;
+    font-size:12px !important;
+    font-weight:850 !important;
+    letter-spacing:.12em !important;
+    text-transform:uppercase !important;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell:last-child {
+    background:#ff2a2a !important;
+    border-left:0 !important;
+    color:#fff !important;
+    font-size:13px !important;
+    letter-spacing:.09em !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:last-child {
+    position:relative;
+    border-left:1px solid #ffd6d6 !important;
+    background:#fff5f5 !important;
+    color:#ee252b !important;
+    font-weight:900 !important;
+    font-size:clamp(15px,1.4vw,19px) !important;
+    letter-spacing:-.035em !important;
+    box-shadow:none !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):hover .table-cell:last-child {
+    background:#ffebeb !important;
+  }
+  html body .comparison .comparison-table .checkmark {
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:35px !important;height:35px !important;
+    border-radius:50% !important;
+    background:#ff2a2a !important;
+    color:#fff !important;
+    font-size:21px !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+  }
+  html body .comparison .comparison-table .x {
+    color:#b9c0cb !important;
+    font-size:25px !important;
+    font-weight:400 !important;
+  }
+}
+@media (min-width:768px) and (max-width:950px) {
+  html body .comparison .comparison-table .table-row {
+    grid-template-columns:1.3fr 1fr 1fr !important;
+    min-height:70px !important;
+  }
+  html body .comparison .comparison-table .table-cell {padding:15px 12px !important;}
+}
+
+/* Comparison language isolation: show exactly one complete table. */
+html body:not(.spanish) .comparison .comparison-table[lang="es"],
+html body.spanish .comparison .comparison-table[lang="en"] { display:none !important; }
+html body:not(.spanish) .comparison .comparison-table[lang="en"],
+html body.spanish .comparison .comparison-table[lang="es"] { display:block !important; }
+
+
+}
+
+@media screen and (min-width:769px) { header.hero .hero-cta-group { display:none!important; } }
 </style>
-<meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
-<meta name="author" content="Bobby Frilot III"/>
-<meta name="creator" content="Bobby Frilot III"/>
-<meta name="publisher" content="SNRG WEB"/>
+<meta content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches." name="description"/>
+<meta content="Bobby Frilot III" name="author"/>
+<meta content="Bobby Frilot III" name="creator"/>
+<meta content="SNRG WEB" name="publisher"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot"/>
 <meta content="index, follow" name="bingbot"/>
@@ -28,7 +364,7 @@
 <!-- Open Graph -->
 <meta content="SNRG WEB" property="og:site_name"/>
 <meta content="Nashville Web Design for Small Businesses | SNRG WEB" property="og:title"/>
-<meta property="og:description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
+<meta content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches." property="og:description"/>
 <meta content="https://cdn.prod.website-files.com/6954808dd8f8b5ed61d75655/6963038128b5e0d58e03d519_ChatGPT%20Image%20Jan%2010%2C%202026%2C%2007_57_08%20PM.png" property="og:image"/>
 <meta content="1024" property="og:image:width"/>
 <meta content="1024" property="og:image:height"/>
@@ -40,7 +376,7 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@snrgweb" name="twitter:site"/>
 <meta content="Nashville Web Design for Small Businesses | SNRG WEB" name="twitter:title"/>
-<meta name="twitter:description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
+<meta content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches." name="twitter:description"/>
 <meta content="https://cdn.prod.website-files.com/6954808dd8f8b5ed61d75655/6963038128b5e0d58e03d519_ChatGPT%20Image%20Jan%2010%2C%202026%2C%2007_57_08%20PM.png" name="twitter:image"/>
 <!-- Security -->
 <meta content="#FF2A2A" name="theme-color"/>
@@ -75,8 +411,8 @@
 <link href="/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/site.webmanifest" rel="manifest"/>
-<meta name="copyright" content="© 2026 SNRG WEB. Founded and owned by Bobby Frilot III."/>
-<link rel="me" href="https://github.com/snrgweb"/>
+<meta content="© 2026 SNRG WEB. Founded and owned by Bobby Frilot III." name="copyright"/>
+<link href="https://github.com/snrgweb" rel="me"/>
 </head>
 <!-- ========== SEO H1 TAG - DO NOT REMOVE ========== -->
 <!-- Place your H1 tag here in the hero section. Example:
@@ -295,7 +631,7 @@
 <span class="project-tag">Community</span>
 </div>
 </a>
-<a class="project-card" href="https://snrgweb.github.io/flooring-outlet-tx/" target="_blank" rel="noopener noreferrer">
+<a class="project-card" href="https://snrgweb.github.io/flooring-outlet-tx/" rel="noopener noreferrer" target="_blank">
 <div class="project-title">Flooring Outlet TX</div>
 <div class="project-desc">High-conversion flooring showroom site with product visuals, mobile-first UX, and lead capture optimization.</div>
 <div class="project-tags">
@@ -304,7 +640,7 @@
 <span class="project-tag">conversion</span>
 </div>
 </a>
-<a class="project-card" href="https://snrgweb.github.io/reel-beautiful/" target="_blank" rel="noopener noreferrer">
+<a class="project-card" href="https://snrgweb.github.io/reel-beautiful/" rel="noopener noreferrer" target="_blank">
 <div class="project-title">Reel Beautiful</div>
 <div class="project-desc">Premium video-focused brand site with optimized media delivery, clean UX, and high-conversion structure.</div>
 <div class="project-tags">
