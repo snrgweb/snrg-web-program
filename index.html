@@ -15,408 +15,6 @@
 @media (min-width:1025px) and (max-width:1440px){
   .hero-stack{margin-top:12px!important;}
 }
-
-/* SNRG plan explorer: isolated styles, no changes to existing page layout */
-.snrg-plan-overlay[hidden]{display:none!important}.snrg-plan-overlay{position:fixed;inset:0;z-index:20000;background:rgba(8,11,17,.76);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;padding:clamp(12px,3vw,30px);animation:snrgPlanFade .22s ease both}
-@keyframes snrgPlanFade{from{opacity:0}to{opacity:1}}
-.snrg-plan-dialog{position:relative;width:min(100%,880px);max-height:min(92dvh,880px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:24px;box-shadow:0 36px 110px rgba(0,0,0,.34);outline:none}
-.snrg-plan-top{background:#101318;color:#fff;padding:clamp(28px,5vw,52px);position:relative;overflow:hidden}.snrg-plan-top:after{content:'';position:absolute;width:270px;height:270px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-100px;top:-120px;pointer-events:none}.snrg-plan-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#ff6565;margin-bottom:12px}.snrg-plan-top h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.055em;line-height:1.1;max-width:630px;margin:0 0 14px}.snrg-plan-top p{max-width:590px;color:#d0d3d8;font-size:clamp(14px,2.5vw,17px);line-height:1.65}.snrg-plan-close{position:absolute;top:16px;right:16px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:25px;line-height:1;cursor:pointer}.snrg-plan-close:hover{background:#ff2a2a}.snrg-plan-body{padding:clamp(24px,4.5vw,46px)}.snrg-plan-pricebar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid #e5e7eb}.snrg-plan-price{font-size:clamp(35px,5vw,50px);font-weight:900;letter-spacing:-.05em;line-height:1}.snrg-plan-price small{font-size:15px;letter-spacing:0;font-weight:600;color:#666}.snrg-plan-secondary{font-size:13px;color:#646a74;font-weight:600;margin-top:5px}.snrg-plan-pill{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#e02424;background:#fff0f0;border:1px solid #ffd4d4;padding:8px 13px;border-radius:100px}.snrg-plan-heading{font-size:clamp(21px,3vw,27px);font-weight:900;letter-spacing:-.035em;margin:26px 0 18px}.snrg-plan-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.snrg-plan-step{border:1px solid #e8e9ec;background:#fafafb;border-radius:16px;padding:21px}.snrg-plan-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:#ff2a2a;color:#fff;font-weight:900;font-size:12px;margin-bottom:12px}.snrg-plan-step h4{font-size:16px;font-weight:850;line-height:1.3;margin:0 0 6px}.snrg-plan-step p{font-size:13px;line-height:1.6;color:#5b626e;margin:0}.snrg-plan-bottom{margin-top:24px;padding:22px;border-radius:17px;background:#f5f6f8;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.snrg-plan-bottom p{font-size:13px;color:#626975;max-width:340px}.snrg-plan-next{background:#ff2a2a!important;color:white!important;border:0!important;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 24px;font-weight:800;text-decoration:none;box-shadow:0 8px 20px rgba(255,42,42,.18);transition:transform .2s,background .2s}.snrg-plan-next:hover{transform:translateY(-2px);background:#e02424!important}.snrg-plan-footnote{font-size:12px;color:#757b84;text-align:center;margin-top:14px}.snrg-plan-overlay a:focus-visible,.snrg-plan-overlay button:focus-visible{outline:3px solid #ff2a2a;outline-offset:4px}body.snrg-plan-open{overflow:hidden}@media(max-width:620px){.snrg-plan-dialog{border-radius:18px;max-height:94dvh}.snrg-plan-top{padding:34px 22px 25px}.snrg-plan-body{padding:22px}.snrg-plan-steps{grid-template-columns:1fr}.snrg-plan-step{padding:16px}.snrg-plan-bottom{padding:18px}.snrg-plan-next{width:100%}}@media(prefers-reduced-motion:reduce){.snrg-plan-overlay{animation:none}}
-
-/* SNRG HERO — LARGE, VIEWPORT-FITTED LOGO, ONE RESPONSIVE SYSTEM.
-   Header is measured by existing script; the square fits both axes and never
-   extends beneath the navigation or outside the visible viewport. */
-:root { --snrg-nav-height: 88px; --snrg-hero-inset: clamp(8px, 1.5svh, 18px); }
-html body header.hero {
-  box-sizing: border-box !important;
-  display: grid !important;
-  place-items: center !important;
-  width: 100% !important;
-  height: calc(100vh - var(--snrg-nav-height)) !important;
-  height: calc(100svh - var(--snrg-nav-height)) !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  margin: var(--snrg-nav-height) 0 0 !important;
-  padding: var(--snrg-hero-inset) 0 !important;
-  overflow: hidden !important;
-}
-html body header.hero > .container,
-html body header.hero .hero-wrap,
-html body header.hero .hero-stack,
-html body header.hero .hero-logo-container,
-html body header.hero .logo-mask {
-  margin: 0 auto !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  transform: none !important;
-}
-html body header.hero > .container { padding-inline: 0 !important; }
-html body header.hero .hero-stack,
-html body header.hero .hero-logo-container,
-html body header.hero .logo-mask {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0 !important;
-  overflow: visible !important;
-}
-html body header.hero .logo-mask > a {
-  display: block !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  line-height: 0 !important;
-}
-html body header.hero img.hero-logo {
-  display: block !important;
-  /* 94% of usable viewport height, or 94% of width: whichever is smaller.
-     No arbitrary 620px desktop ceiling; short screens shrink naturally. */
-  width: min(94vw, calc((100svh - var(--snrg-nav-height) - 2 * var(--snrg-hero-inset)) * .94), 1100px) !important;
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  object-fit: contain !important;
-  aspect-ratio: 1 / 1;
-  /* Keep existing logo tunnel animation and visual effects unchanged. */
-}
-@media (max-width: 600px) {
-  :root { --snrg-hero-inset: 8px; }
-  html body header.hero img.hero-logo {
-    width: min(96vw, calc((100svh - var(--snrg-nav-height) - 16px) * .94)) !important;
-  }
-}
-@media (max-height: 480px) and (orientation: landscape) {
-  :root { --snrg-hero-inset: 4px; }
-  html body header.hero img.hero-logo {
-    width: min(78vw, calc((100svh - var(--snrg-nav-height) - 8px) * .92)) !important;
-  }
-}
-
-/* OCT 2026: MOBILE HERO ONLY — content-fitted, no full-screen dead space. */
-@media (max-width: 767px) {
-  html body header.hero {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-top: var(--snrg-nav-height) !important;
-    padding: clamp(10px, 2.4svh, 22px) 0 clamp(14px, 3svh, 28px) !important;
-    overflow: visible !important;
-  }
-  html body header.hero > .container,
-  html body header.hero .hero-wrap,
-  html body header.hero .hero-stack,
-  html body header.hero .hero-logo-container,
-  html body header.hero .logo-mask {
-    height: auto !important;
-    min-height: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  html body header.hero img.hero-logo {
-    width: min(96vw, calc((100svh - var(--snrg-nav-height) - 48px) * .94)) !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
-/* Desktop/laptop only: precision-styled comparison panel. No mobile changes. */
-@media (min-width: 768px) {
-  html body .comparison { position:relative; isolation:isolate; }
-  html body .comparison .container { max-width: 1170px; }
-  html body .comparison .section-title {
-    font-weight: 900; letter-spacing: -.045em;
-    margin-bottom: 34px;
-  }
-  html body .comparison .comparison-table {
-    position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-    border: 1px solid rgba(24,32,43,.13);
-    box-shadow: 0 24px 65px rgba(15,22,34,.095), 0 3px 12px rgba(15,22,34,.035);
-    background: #fff;
-    transform: translateZ(0);
-  }
-  html body .comparison .comparison-table::before {
-    content: ''; position:absolute; z-index:2; top:0; left:0; right:0;
-    height:3px; background:linear-gradient(90deg, #ff2a2a, #ff6b63 48%, #ff2a2a);
-    pointer-events:none;
-  }
-  html body .comparison .comparison-table .table-row:first-child {
-    background: radial-gradient(circle at 86% -50%, rgba(255,42,42,.16), transparent 43%),
-      repeating-linear-gradient(90deg, transparent 0, transparent 39px, rgba(255,255,255,.025) 40px),
-      #11151c !important;
-    min-height: 72px;
-  }
-  html body .comparison .comparison-table .table-row:first-child .table-cell {
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    letter-spacing: .12em !important;
-    text-transform: uppercase;
-    font-weight: 850;
-    border-color: rgba(255,255,255,.11) !important;
-  }
-  html body .comparison .comparison-table .table-row:first-child .table-cell:last-child {
-    color: #ff7777 !important;
-    text-shadow: 0 0 24px rgba(255,42,42,.24);
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) {
-    background: #fff !important;
-    transition: background .2s ease;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child):nth-child(odd) {
-    background: #fafbfc !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child):hover {
-    background: #fff4f4 !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
-    border-color: #e9ebef !important;
-    padding-top: 22px !important;
-    padding-bottom: 22px !important;
-    font-size: 15px;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:first-child {
-    color: #171b22; font-weight: 750;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:nth-child(2) {
-    color: #6d7480;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:last-child {
-    color: #f32931 !important;
-    font-weight: 850;
-    background: linear-gradient(90deg, rgba(255,42,42,.025), rgba(255,42,42,.055)) !important;
-    box-shadow: inset 3px 0 0 rgba(255,42,42,.75);
-  }
-  html body .comparison .comparison-table .checkmark {
-    color: #ff2a2a !important;
-    font-size: 25px !important;
-    font-weight: 900;
-  }
-  html body .comparison .comparison-table .x { color: #b8bec8 !important; }
-}
-@media (min-width:768px) and (max-width:1024px) {
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
-    padding-top: 17px !important; padding-bottom:17px !important;
-  }
-}
-
-/* SNRG DIFFERENCE — RED EDITION / desktop & laptop only */
-@media (min-width:768px) {
-  html body .comparison {
-    position:relative !important;
-    isolation:isolate;
-    padding:clamp(64px,7vw,108px) 0 !important;
-    background:radial-gradient(ellipse at 50% 20%,#fff 0%,#f7f8fb 58%,#f0f2f6 100%) !important;
-    overflow:hidden;
-  }
-  html body .comparison:before {
-    content:'';position:absolute;inset:0;pointer-events:none;opacity:.35;
-    background-image:linear-gradient(#d9dee7 1px,transparent 1px),linear-gradient(90deg,#d9dee7 1px,transparent 1px);
-    background-size:38px 38px;
-    mask-image:linear-gradient(to bottom,transparent,#000 30%,transparent 100%);
-  }
-  html body .comparison .container {max-width:1200px !important;position:relative;z-index:1}
-  html body .comparison .section-title {
-    font-size:clamp(34px,4.5vw,60px) !important;
-    font-weight:900 !important;
-    line-height:1.08 !important;
-    letter-spacing:-.065em !important;
-    margin:0 0 38px !important;
-    color:#11131a !important;
-  }
-  html body .comparison .comparison-table {
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:0 !important;
-    overflow:hidden !important;
-    border:1px solid #dfe2e9 !important;
-    border-radius:30px !important;
-    background:#fff !important;
-    box-shadow:0 32px 75px rgba(19,25,40,.10),0 6px 15px rgba(19,25,40,.035) !important;
-  }
-  html body .comparison .comparison-table .table-row {
-    display:grid !important;
-    grid-template-columns:minmax(190px,1.45fr) minmax(160px,1fr) minmax(190px,1fr) !important;
-    align-items:stretch !important;
-    min-height:76px !important;
-    border:0 !important;
-    background:#fff !important;
-    transition:background .18s ease,transform .18s ease !important;
-  }
-  html body .comparison .comparison-table .table-row:first-child {
-    min-height:80px !important;
-    background:#11151d !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) {
-    border-top:1px solid #eceef2 !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child):hover {
-    background:#f8f9fc !important;
-  }
-  html body .comparison .comparison-table .table-cell {
-    box-sizing:border-box !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    width:auto !important;
-    min-width:0 !important;
-    padding:18px clamp(12px,2vw,30px) !important;
-    border:0 !important;
-    border-left:1px solid #eceef2 !important;
-    background:transparent !important;
-    font-size:clamp(13px,1.18vw,16px) !important;
-    font-weight:550 !important;
-    line-height:1.3 !important;
-    color:#667080 !important;
-    text-align:center !important;
-  }
-  html body .comparison .comparison-table .table-cell:first-child {
-    justify-content:flex-start !important;
-    border-left:0 !important;
-    color:#181d27 !important;
-    font-weight:800 !important;
-    letter-spacing:-.025em !important;
-  }
-  html body .comparison .comparison-table .table-row:first-child .table-cell {
-    color:#fff !important;
-    background:transparent !important;
-    border-color:#343a45 !important;
-    font-size:12px !important;
-    font-weight:850 !important;
-    letter-spacing:.12em !important;
-    text-transform:uppercase !important;
-  }
-  html body .comparison .comparison-table .table-row:first-child .table-cell:last-child {
-    background:#ff2a2a !important;
-    border-left:0 !important;
-    color:#fff !important;
-    font-size:13px !important;
-    letter-spacing:.09em !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:last-child {
-    position:relative;
-    border-left:1px solid #ffd6d6 !important;
-    background:#fff5f5 !important;
-    color:#ee252b !important;
-    font-weight:900 !important;
-    font-size:clamp(15px,1.4vw,19px) !important;
-    letter-spacing:-.035em !important;
-    box-shadow:none !important;
-  }
-  html body .comparison .comparison-table .table-row:not(:first-child):hover .table-cell:last-child {
-    background:#ffebeb !important;
-  }
-  html body .comparison .comparison-table .checkmark {
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    width:35px !important;height:35px !important;
-    border-radius:50% !important;
-    background:#ff2a2a !important;
-    color:#fff !important;
-    font-size:21px !important;
-    font-weight:900 !important;
-    line-height:1 !important;
-  }
-  html body .comparison .comparison-table .x {
-    color:#b9c0cb !important;
-    font-size:25px !important;
-    font-weight:400 !important;
-  }
-}
-@media (min-width:768px) and (max-width:950px) {
-  html body .comparison .comparison-table .table-row {
-    grid-template-columns:1.3fr 1fr 1fr !important;
-    min-height:70px !important;
-  }
-  html body .comparison .comparison-table .table-cell {padding:15px 12px !important;}
-}
-
-/* Comparison language isolation: show exactly one complete table. */
-html body:not(.spanish) .comparison .comparison-table[lang="es"],
-html body.spanish .comparison .comparison-table[lang="en"] { display:none !important; }
-html body:not(.spanish) .comparison .comparison-table[lang="en"],
-html body.spanish .comparison .comparison-table[lang="es"] { display:block !important; }
-
-/* SNRG MOBILE HERO: ONE AUTHORITATIVE OVERRIDE. No viewport-height forcing. */
-@media (max-width:767px) {
- html body header.hero {
-   box-sizing:border-box!important;
-   display:flex!important;
-   align-items:center!important;
-   justify-content:center!important;
-   height:auto!important;
-   min-height:0!important;
-   max-height:none!important;
-   margin:var(--snrg-nav-height,88px) 0 0!important;
-   padding:0!important;
-   overflow:hidden!important;
- }
- html body header.hero > .container,
- html body header.hero .hero-wrap,
- html body header.hero .hero-stack,
- html body header.hero .hero-logo-container {
-   box-sizing:border-box!important;
-   display:flex!important;
-   flex-direction:column!important;
-   align-items:center!important;
-   justify-content:center!important;
-   width:100%!important;
-   height:auto!important;
-   min-height:0!important;
-   max-height:none!important;
-   padding:0!important;
-   margin:0!important;
- }
- html body header.hero .logo-mask {
-   display:flex!important;
-   align-items:center!important;
-   justify-content:center!important;
-   box-sizing:border-box!important;
-   width:100%!important;
-   height:clamp(250px,78vw,560px)!important;
-   min-height:0!important;
-   max-height:calc(100svh - var(--snrg-nav-height,88px) - 12px)!important;
-   overflow:hidden!important;
-   margin:0!important;
-   padding:0!important;
- }
- html body header.hero .logo-mask > a {
-   display:block!important;
-   flex:0 0 auto!important;
-   width:96vw!important;
-   max-width:100%!important;
-   line-height:0!important;
- }
- html body header.hero img.hero-logo {
-   display:block!important;
-   width:96vw!important;
-   max-width:100%!important;
-   height:auto!important;
-   aspect-ratio:1/1!important;
-   margin:0!important;
- }
- html body section.pricing {
-   margin-top:0!important;
-   padding-top:clamp(20px,4svh,34px)!important;
-   opacity:1!important;
-   visibility:visible!important;
- }
- html body section.pricing .section-title.pricing-hero {
-   opacity:1!important;
-   visibility:visible!important;
-   transform:none!important;
-   animation:none!important;
-   margin-top:0!important;
- }
-}
 </style>
 <meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
 <meta name="author" content="Bobby Frilot III"/>
@@ -462,7 +60,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <link href="https://snrgweb.com/sitemap.xml" rel="sitemap" type="application/xml"/>
 <!-- Performance -->
 <link crossorigin="" href="https://cdn.prod.website-files.com" rel="preconnect"/>
-
+<link href="https://pay.snrgweb.com" rel="dns-prefetch"/>
 <!-- SEO ENTITY GRAPH: business + founder + website + homepage + portfolio -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://snrgweb.com/#business","name":"SNRG WEB","alternateName":"SNRG Web","url":"https://snrgweb.com/","description":"Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches.","telephone":"+1-615-669-9180","email":"info@snrgweb.com","priceRange":"$$","foundingDate":"2025","founder":{"@id":"https://snrgweb.com/#bobby-frilot"},"areaServed":[{"@type":"City","name":"Nashville"},{"@type":"State","name":"Tennessee"}],"knowsAbout":["Small Business Web Design","Responsive Web Design","Front-End Development","Technical SEO","Local SEO","Schema Markup","Core Web Vitals","Conversion Optimization","Website Analytics","Website Hosting","Website Maintenance"],"sameAs":["https://www.instagram.com/snrgweb/","https://www.facebook.com/profile.php?id=61587811778243","https://github.com/snrgweb"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Small Business Website Services","itemListElement":[{"@type":"Offer","name":"Fully Managed Website","url":"https://snrgweb.com/#pricing","price":"89.00","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Fully Managed Small Business Website","serviceType":"Web design, hosting, SEO setup and ongoing support","provider":{"@id":"https://snrgweb.com/#business"},"areaServed":{"@type":"City","name":"Nashville"}}},{"@type":"Offer","name":"Website Ownership","url":"https://snrgweb.com/#pricing","price":"770.00","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Custom Small Business Website","serviceType":"Website design and development","provider":{"@id":"https://snrgweb.com/#business"}}}]}},{"@type":"Person","@id":"https://snrgweb.com/#bobby-frilot","name":"Bobby Frilot III","alternateName":"Bobby Frilot","jobTitle":"Founder, Owner & Lead Web Strategist","worksFor":{"@id":"https://snrgweb.com/#business"},"url":"https://snrgweb.com/","sameAs":["https://www.linkedin.com/in/bobbyfrilot","https://www.upwork.com/freelancers/bobbyfrilot","https://github.com/snrgweb"],"knowsAbout":["Web Design","Front-End Development","Technical SEO","Local SEO","Schema Markup","Mobile-First Design","Conversion Strategy"]},{"@type":"WebSite","@id":"https://snrgweb.com/#website","url":"https://snrgweb.com/","name":"SNRG WEB","publisher":{"@id":"https://snrgweb.com/#business"},"inLanguage":["en","es"]},{"@type":"WebPage","@id":"https://snrgweb.com/#homepage","url":"https://snrgweb.com/","name":"Nashville Web Design for Small Businesses | $89/mo | SNRG WEB","description":"Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches.","isPartOf":{"@id":"https://snrgweb.com/#website"},"about":{"@id":"https://snrgweb.com/#business"},"mainEntity":{"@id":"https://snrgweb.com/#business"},"datePublished":"2026-02-19","dateModified":"2026-09-18","inLanguage":"en"},{"@type":"ItemList","@id":"https://snrgweb.com/#portfolio","name":"Selected SNRG WEB Projects","url":"https://snrgweb.com/#projects","itemListElement":[{"@type":"ListItem","position":1,"name":"Born Elite Sports","url":"https://snrgweb.github.io/born-elite/"},{"@type":"ListItem","position":2,"name":"Flooring Outlet TX","url":"https://snrgweb.github.io/flooring-outlet-tx/"},{"@type":"ListItem","position":3,"name":"Reel Beautiful","url":"https://snrgweb.github.io/reel-beautiful/"},{"@type":"ListItem","position":4,"name":"Offroad Brothers 4WD","url":"https://offroadbrothers4wd.com/"},{"@type":"ListItem","position":5,"name":"Angel's Furniture","url":"https://snrgweb.github.io/angels-furniture/"},{"@type":"ListItem","position":6,"name":"Kibler's Kollectibles","url":"https://snrgweb.github.io/kiblers-kollectibles/"},{"@type":"ListItem","position":7,"name":"ConNet Graphics","url":"https://snrgweb.github.io/connet-graphics/"},{"@type":"ListItem","position":8,"name":"Tortas Gigantes","url":"https://snrgweb.github.io/tortas-gigantes/"},{"@type":"ListItem","position":9,"name":"Mr. Donuts & Kolaches","url":"https://snrgweb.github.io/mr-donuts/"}]}]}
@@ -479,42 +77,6 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <link href="/site.webmanifest" rel="manifest"/>
 <meta name="copyright" content="© 2026 SNRG WEB. Founded and owned by Bobby Frilot III."/>
 <link rel="me" href="https://github.com/snrgweb"/>
-
-<!-- MOBILE-ONLY HERO AMBIENCE: paint-only, never changes layout dimensions. -->
-<style id="snrg-mobile-ambient-hero">
-@media (max-width: 767px) {
-  html body header.hero {
-    /* Layered ambient light; no sizing, positioning or spacing overrides. */
-    background-color: #fff !important;
-    background-image:
-      radial-gradient(ellipse 56% 43% at 19% 27%, rgba(255,42,42,.085), transparent 76%),
-      radial-gradient(ellipse 60% 50% at 84% 76%, rgba(255,42,42,.060), transparent 78%),
-      radial-gradient(ellipse 63% 55% at 51% 48%, rgba(238,241,246,.70), transparent 82%) !important;
-    background-repeat: no-repeat !important;
-    background-size: 115% 115%, 115% 115%, 100% 100% !important;
-    background-position: 0% 0%, 100% 100%, center !important;
-    animation: snrgMobileAmbient 16s ease-in-out infinite alternate !important;
-  }
-  /* Existing animation layers are deliberately kept disabled; image stays crisp. */
-  html body header.hero img.hero-logo {
-    filter: drop-shadow(0 18px 32px rgba(16,19,24,.11)) !important;
-  }
-}
-@keyframes snrgMobileAmbient {
-  from { background-position: 0% 0%, 100% 100%, center; }
-  to   { background-position: 16% 13%, 83% 85%, center; }
-}
-@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
-  html body header.hero { animation: none !important; }
-}
-</style>
-
-<!-- Mobile-only CTA correction.  All existing hero and desktop/laptop rules preserved. -->
-<style id="snrg-mobile-cta-only">
-@media screen and (max-width: 768px) {
-  #stickyCTA, .sticky-cta { display: none !important; }
-}
-</style>
 </head>
 <!-- ========== SEO H1 TAG - DO NOT REMOVE ========== -->
 <!-- Place your H1 tag here in the hero section. Example:
@@ -549,7 +111,12 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 </a>
 </div>
 </div>
-<!-- Hero deliberately logo-only; existing sticky footer and pricing CTAs remain. -->
+<div class="hero-cta-group">
+<a class="cta cta-primary" href="/contact" lang="en">Get Started</a>
+<a class="cta cta-secondary" href="#pricing" lang="en">View Pricing</a>
+<a class="cta cta-primary" href="/contact" lang="es">Suscribirse</a>
+<a class="cta cta-secondary" href="#pricing" lang="es">Cómo funciona</a>
+</div>
 </div>
 </div>
 </div>
@@ -575,7 +142,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Ongoing support</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-primary" href="#managed-details" data-plan="managed" aria-haspopup="dialog">Choose Managed</a>
+<a class="cta cta-primary" href="/contact">Choose Managed</a>
 </div>
 </div>
 <div class="pricing-card" lang="en">
@@ -592,7 +159,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Documentation</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-secondary" href="#ownership-details" data-plan="ownership" aria-haspopup="dialog">Choose Ownership</a>
+<a class="cta cta-secondary" href="/contact">Choose Ownership</a>
 </div>
 </div>
 <div class="pricing-card" lang="es">
@@ -611,7 +178,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Soporte continuo</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-primary" href="#managed-details" data-plan="managed" aria-haspopup="dialog">Elegir Administrado</a>
+<a class="cta cta-primary" href="/contact">Elegir Administrado</a>
 </div>
 </div>
 <div class="pricing-card" lang="es">
@@ -628,7 +195,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <li class="pricing-feature">Documentación</li>
 </ul>
 <div class="pricing-cta">
-<a class="cta cta-secondary" href="#ownership-details" data-plan="ownership" aria-haspopup="dialog">Elegir Propiedad</a>
+<a class="cta cta-secondary" href="/contact">Elegir Propiedad</a>
 </div>
 </div>
 </div>
@@ -638,7 +205,7 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <div class="container">
 <h2 class="section-title" lang="en">The SNRG Difference</h2>
 <h2 class="section-title" lang="es">La Diferencia SNRG</h2>
-<div class="comparison-table" lang="en">
+<div class="comparison-table">
 <div class="table-row">
 <div class="table-cell" lang="en">Feature</div>
 <div class="table-cell" lang="en">Typical Agency</div>
@@ -865,8 +432,8 @@ html body.spanish .comparison .comparison-table[lang="es"] { display:block !impo
 <div class="sticky-cta-buttons">
 <a class="cta cta-primary" href="/contact" lang="en">Get Started</a>
 <a class="cta cta-secondary" href="#pricing" lang="en">View Pricing</a>
-<a class="cta cta-primary" href="/contact" lang="es">Comenzar</a>
-<a class="cta cta-secondary" href="#pricing" lang="es">Ver precios</a>
+<a class="cta cta-primary" href="/contact" lang="es">Suscribirse</a>
+<a class="cta cta-secondary" href="#pricing" lang="es">Cómo funciona</a>
 </div>
 </div>
 <footer class="footer snrg-footer fade-in">
@@ -1177,75 +744,5 @@ document.addEventListener("DOMContentLoaded", function(){
 <a href="https://www.instagram.com/snrgweb/" rel="me noopener noreferrer" target="_blank">SNRG WEB Instagram</a>
 <a href="https://www.facebook.com/profile.php?id=61587811778243" rel="me noopener noreferrer" target="_blank">SNRG WEB Facebook</a>
 </div>
-
-<!-- Plan explorer: details stay on-site; existing contact form remains the only inquiry form. -->
-<div class="snrg-plan-overlay" id="snrgPlanOverlay" hidden>
-  <section class="snrg-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="snrgPlanTitle" tabindex="-1">
-    <div class="snrg-plan-top">
-      <button type="button" class="snrg-plan-close" aria-label="Close plan details">&times;</button>
-      <div class="snrg-plan-eyebrow" id="snrgPlanEyebrow"></div>
-      <h2 id="snrgPlanTitle"></h2>
-      <p id="snrgPlanIntro"></p>
-    </div>
-    <div class="snrg-plan-body">
-      <div class="snrg-plan-pricebar"><div><div class="snrg-plan-price" id="snrgPlanPrice"></div><div class="snrg-plan-secondary" id="snrgPlanSecondary"></div></div><div class="snrg-plan-pill" id="snrgPlanPill"></div></div>
-      <h3 class="snrg-plan-heading" id="snrgPlanStepsHeading"></h3>
-      <div class="snrg-plan-steps" id="snrgPlanSteps"></div>
-      <div class="snrg-plan-bottom"><p id="snrgPlanBottomText"></p><a class="snrg-plan-next" id="snrgPlanNext" href="/contact"></a></div>
-      <p class="snrg-plan-footnote" id="snrgPlanFootnote"></p>
-    </div>
-  </section>
-</div>
-<script>
-(function(){
-  'use strict';
-  const overlay=document.getElementById('snrgPlanOverlay');
-  const dialog=overlay.querySelector('.snrg-plan-dialog');
-  const closeButton=overlay.querySelector('.snrg-plan-close');
-  const nextButton=document.getElementById('snrgPlanNext');
-  let previousFocus=null;
-  const content={
-    en:{
-      managed:{eyebrow:'FULLY MANAGED · RECOMMENDED',title:'Your business grows. We handle the website.',intro:'A custom-built website, professionally managed from design through launch and beyond. No upfront design fee.',price:'$89 <small>/ month</small>',secondary:'After the first 12 months: $50/month',pill:'Hosting included',heading:'Here’s how your website comes to life',steps:[['Tell us about your business','Share your goals, services, branding, and what you want your website to accomplish.'],['We build your website','We create a custom, mobile-responsive site with SEO foundations, performance optimization, and analytics setup.'],['Review and approve','See your completed website, provide feedback, and approve it before your paid plan begins.'],['Launch. We take care of the rest.','Your site goes live with hosting, ongoing support, and up to five website updates each month.']],bottom:'Ready to talk? Tell us about your business or book a consultation using our existing contact page.',button:'Get Started With Managed →',footnote:'No upfront design fee. No payment is collected in this step.',slug:'managed'},
-      ownership:{eyebrow:'FULL OWNERSHIP · ONE-TIME',title:'A website that’s yours. Completely.',intro:'A professionally designed website with the source files and documentation you need to take full ownership.',price:'$770 <small>one-time</small>',secondary:'Optional managed hosting: $50/month',pill:'Source files included',heading:'From first conversation to full ownership',steps:[['Tell us what you need','Share your business goals, design preferences, required pages, and project expectations.'],['Agree on the project','We confirm the website scope, deliverables, schedule, and payment terms before work begins.'],['Design, review, refine','We build your responsive, SEO-optimized website and walk you through the agreed review process.'],['Launch and handover','After final payment, receive your source files and documentation, plus 30 days of support.']],bottom:'Want a site you own outright? Reach out or schedule a consultation to discuss the project.',button:'Get Started With Ownership →',footnote:'No payment is collected in this step. Hosting is optional and billed separately if selected.',slug:'ownership'}
-    },
-    es:{
-      managed:{eyebrow:'ADMINISTRADO · RECOMENDADO',title:'Tu negocio crece. Nosotros manejamos tu sitio.',intro:'Un sitio web personalizado, administrado profesionalmente desde el diseño hasta el lanzamiento y más allá. Sin pago inicial por diseño.',price:'$89 <small>/ mes</small>',secondary:'Después de los primeros 12 meses: $50/mes',pill:'Hospedaje incluido',heading:'Así creamos tu sitio web',steps:[['Cuéntanos sobre tu negocio','Comparte tus metas, servicios, marca y lo que necesitas de tu sitio web.'],['Diseñamos tu sitio','Creamos un sitio adaptable a móviles, optimizado para SEO, velocidad y análisis.'],['Revisa y aprueba','Conoce tu sitio terminado, comparte comentarios y apruébalo antes de comenzar el plan de pago.'],['Lanzamos y administramos','Publicamos tu sitio con hospedaje, soporte continuo y hasta cinco actualizaciones al mes.']],bottom:'¿Listo para hablar? Cuéntanos sobre tu negocio o reserva una consulta en nuestra página de contacto.',button:'Comenzar con el plan administrado →',footnote:'Sin pago inicial por diseño. No se cobra nada en este paso.',slug:'managed'},
-      ownership:{eyebrow:'PROPIEDAD COMPLETA · PAGO ÚNICO',title:'Un sitio web completamente tuyo.',intro:'Un sitio web diseñado profesionalmente, con archivos fuente y documentación para que tengas el control.',price:'$770 <small>pago único</small>',secondary:'Hospedaje administrado opcional: $50/mes',pill:'Archivos incluidos',heading:'Del primer contacto a la entrega',steps:[['Cuéntanos qué necesitas','Comparte tus objetivos, estilo, páginas necesarias y expectativas.'],['Confirmamos el proyecto','Acordamos el alcance, entregables, cronograma y condiciones de pago antes de comenzar.'],['Diseñamos y revisamos','Creamos tu sitio adaptable a móviles y optimizado para SEO, con el proceso de revisión acordado.'],['Publicación y entrega','Tras el pago final, recibes archivos fuente, documentación y 30 días de soporte.']],bottom:'¿Quieres ser dueño de tu sitio? Contáctanos o reserva una consulta para hablar del proyecto.',button:'Comenzar con propiedad completa →',footnote:'No se cobra nada en este paso. El hospedaje es opcional y se factura por separado.',slug:'ownership'}
-    }
-  };
-  function put(id,value){document.getElementById(id).textContent=value;}
-  function open(plan){
-    const lang=document.body.classList.contains('spanish')?'es':'en';
-    const item=content[lang][plan];if(!item)return;
-    previousFocus=document.activeElement;
-    put('snrgPlanEyebrow',item.eyebrow);put('snrgPlanTitle',item.title);put('snrgPlanIntro',item.intro);
-    document.getElementById('snrgPlanPrice').innerHTML=item.price;
-    put('snrgPlanSecondary',item.secondary);put('snrgPlanPill',item.pill);put('snrgPlanStepsHeading',item.heading);
-    const steps=document.getElementById('snrgPlanSteps');steps.replaceChildren();
-    item.steps.forEach((step,i)=>{const card=document.createElement('div');card.className='snrg-plan-step';const n=document.createElement('span');n.className='snrg-plan-num';n.textContent=String(i+1).padStart(2,'0');const title=document.createElement('h4');title.textContent=step[0];const description=document.createElement('p');description.textContent=step[1];card.append(n,title,description);steps.append(card);});
-    put('snrgPlanBottomText',item.bottom);put('snrgPlanNext',item.button);put('snrgPlanFootnote',item.footnote);
-    nextButton.href='/contact?plan='+encodeURIComponent(item.slug);
-    closeButton.setAttribute('aria-label',lang==='es'?'Cerrar detalles del plan':'Close plan details');
-    overlay.hidden=false;document.body.classList.add('snrg-plan-open');dialog.scrollTop=0;closeButton.focus();
-  }
-  function close(){overlay.hidden=true;document.body.classList.remove('snrg-plan-open');if(previousFocus&&previousFocus.isConnected)previousFocus.focus();}
-  document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(a.dataset.plan)}));
-  closeButton.addEventListener('click',close);
-  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
-  document.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();close();return;}if(e.key==='Tab'){const focusable=Array.from(dialog.querySelectorAll('a[href],button:not([disabled])'));const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
-})();
-</script>
-<script>
-/* Keep the hero clear of the real fixed navigation height, even when it wraps. */
-(function () {
-  const nav = document.querySelector('.lang-bar');
-  if (!nav) return;
-  const sync = () => document.documentElement.style.setProperty('--snrg-nav-height', Math.ceil(nav.getBoundingClientRect().height) + 'px');
-  sync();
-  if ('ResizeObserver' in window) new ResizeObserver(sync).observe(nav);
-  else window.addEventListener('resize', sync, {passive:true});
-})();
-</script>
 </body>
 </html>
