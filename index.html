@@ -93,6 +93,119 @@ html body header.hero img.hero-logo {
     width: min(78vw, calc((100svh - var(--snrg-nav-height) - 8px) * .92)) !important;
   }
 }
+
+/* OCT 2026: MOBILE HERO ONLY — content-fitted, no full-screen dead space. */
+@media (max-width: 767px) {
+  html body header.hero {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: var(--snrg-nav-height) !important;
+    padding: clamp(10px, 2.4svh, 22px) 0 clamp(14px, 3svh, 28px) !important;
+    overflow: visible !important;
+  }
+  html body header.hero > .container,
+  html body header.hero .hero-wrap,
+  html body header.hero .hero-stack,
+  html body header.hero .hero-logo-container,
+  html body header.hero .logo-mask {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  html body header.hero img.hero-logo {
+    width: min(96vw, calc((100svh - var(--snrg-nav-height) - 48px) * .94)) !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+/* Desktop/laptop only: precision-styled comparison panel. No mobile changes. */
+@media (min-width: 768px) {
+  html body .comparison { position:relative; isolation:isolate; }
+  html body .comparison .container { max-width: 1170px; }
+  html body .comparison .section-title {
+    font-weight: 900; letter-spacing: -.045em;
+    margin-bottom: 34px;
+  }
+  html body .comparison .comparison-table {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(24,32,43,.13);
+    box-shadow: 0 24px 65px rgba(15,22,34,.095), 0 3px 12px rgba(15,22,34,.035);
+    background: #fff;
+    transform: translateZ(0);
+  }
+  html body .comparison .comparison-table::before {
+    content: ''; position:absolute; z-index:2; top:0; left:0; right:0;
+    height:3px; background:linear-gradient(90deg, #ff2a2a, #ff6b63 48%, #ff2a2a);
+    pointer-events:none;
+  }
+  html body .comparison .comparison-table .table-row:first-child {
+    background: radial-gradient(circle at 86% -50%, rgba(255,42,42,.16), transparent 43%),
+      repeating-linear-gradient(90deg, transparent 0, transparent 39px, rgba(255,255,255,.025) 40px),
+      #11151c !important;
+    min-height: 72px;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell {
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    letter-spacing: .12em !important;
+    text-transform: uppercase;
+    font-weight: 850;
+    border-color: rgba(255,255,255,.11) !important;
+  }
+  html body .comparison .comparison-table .table-row:first-child .table-cell:last-child {
+    color: #ff7777 !important;
+    text-shadow: 0 0 24px rgba(255,42,42,.24);
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) {
+    background: #fff !important;
+    transition: background .2s ease;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):nth-child(odd) {
+    background: #fafbfc !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child):hover {
+    background: #fff4f4 !important;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
+    border-color: #e9ebef !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    font-size: 15px;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:first-child {
+    color: #171b22; font-weight: 750;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:nth-child(2) {
+    color: #6d7480;
+  }
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell:last-child {
+    color: #f32931 !important;
+    font-weight: 850;
+    background: linear-gradient(90deg, rgba(255,42,42,.025), rgba(255,42,42,.055)) !important;
+    box-shadow: inset 3px 0 0 rgba(255,42,42,.75);
+  }
+  html body .comparison .comparison-table .checkmark {
+    color: #ff2a2a !important;
+    font-size: 25px !important;
+    font-weight: 900;
+  }
+  html body .comparison .comparison-table .x { color: #b8bec8 !important; }
+}
+@media (min-width:768px) and (max-width:1024px) {
+  html body .comparison .comparison-table .table-row:not(:first-child) .table-cell {
+    padding-top: 17px !important; padding-bottom:17px !important;
+  }
+}
 </style>
 <meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
 <meta name="author" content="Bobby Frilot III"/>
