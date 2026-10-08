@@ -207,60 +207,6 @@ html body header.hero img.hero-logo {
   }
 }
 
-/* SNRG 2026 FINAL MOBILE HERO: content-sized, symmetric spacing, logo preserved. */
-@media screen and (max-width:767px) {
-  html body header.hero {
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    box-sizing:border-box !important;
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    margin:var(--snrg-nav-height) 0 0 !important;
-    padding:clamp(20px,4svh,38px) 0 clamp(20px,4svh,38px) !important;
-    overflow:hidden !important;
-  }
-  html body header.hero > .container,
-  html body header.hero .hero-wrap,
-  html body header.hero .hero-stack,
-  html body header.hero .hero-logo-container {
-    width:100% !important;
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    margin:0 auto !important;
-    padding:0 !important;
-  }
-  html body header.hero .logo-mask {
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    width:100% !important;
-    height:78vw !important;
-    min-height:0 !important;
-    max-height:calc(100svh - var(--snrg-nav-height) - 64px) !important;
-    margin:0 auto !important;
-    padding:0 !important;
-    overflow:hidden !important;
-  }
-  html body header.hero .logo-mask > a {
-    display:block !important;
-    flex:0 0 auto !important;
-    width:96vw !important;
-    max-width:100% !important;
-    line-height:0 !important;
-  }
-  html body header.hero img.hero-logo {
-    display:block !important;
-    width:96vw !important;
-    max-width:100% !important;
-    height:auto !important;
-    aspect-ratio:1/1 !important;
-    margin:0 !important;
-  }
-  html body .pricing { padding-top:clamp(40px,7svh,64px) !important; }
-}
 /* SNRG DIFFERENCE — RED EDITION / desktop & laptop only */
 @media (min-width:768px) {
   html body .comparison {
@@ -399,42 +345,78 @@ html body.spanish .comparison .comparison-table[lang="en"] { display:none !impor
 html body:not(.spanish) .comparison .comparison-table[lang="en"],
 html body.spanish .comparison .comparison-table[lang="es"] { display:block !important; }
 
-/* SNRG MOBILE FINAL: fix the REAL empty space.
-   The pricing section was hidden by paused entrance animations until scroll.
-   Keep existing logo dimensions, preserve all desktop/laptop styling. */
-@media only screen and (max-width:767px) {
-  html body header.hero {
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    margin-top:var(--snrg-nav-height) !important;
-    padding:clamp(10px,2.5svh,20px) 0 clamp(10px,2.5svh,20px) !important;
-  }
-  html body header.hero .hero-wrap,
-  html body header.hero .hero-stack,
-  html body header.hero .hero-logo-container {
-    min-height:0 !important;
-    height:auto !important;
-  }
-  /* The visible logo dimensions and image cropping are intentionally unchanged. */
-  html body section.pricing {
-    margin-top:0 !important;
-    padding-top:clamp(18px,4svh,36px) !important;
-    opacity:1 !important;
-    transform:none !important;
-    animation:none !important;
-    visibility:visible !important;
-  }
-  html body section.pricing .section-title.pricing-hero {
-    margin-top:0 !important;
-    margin-bottom:clamp(20px,4vw,28px) !important;
-    opacity:1 !important;
-    transform:none !important;
-    animation:none !important;
-    visibility:visible !important;
-  }
+/* SNRG MOBILE HERO: ONE AUTHORITATIVE OVERRIDE. No viewport-height forcing. */
+@media (max-width:767px) {
+ html body header.hero {
+   box-sizing:border-box!important;
+   display:flex!important;
+   align-items:center!important;
+   justify-content:center!important;
+   height:auto!important;
+   min-height:0!important;
+   max-height:none!important;
+   margin:var(--snrg-nav-height,88px) 0 0!important;
+   padding:0!important;
+   overflow:hidden!important;
+ }
+ html body header.hero > .container,
+ html body header.hero .hero-wrap,
+ html body header.hero .hero-stack,
+ html body header.hero .hero-logo-container {
+   box-sizing:border-box!important;
+   display:flex!important;
+   flex-direction:column!important;
+   align-items:center!important;
+   justify-content:center!important;
+   width:100%!important;
+   height:auto!important;
+   min-height:0!important;
+   max-height:none!important;
+   padding:0!important;
+   margin:0!important;
+ }
+ html body header.hero .logo-mask {
+   display:flex!important;
+   align-items:center!important;
+   justify-content:center!important;
+   box-sizing:border-box!important;
+   width:100%!important;
+   height:clamp(250px,78vw,560px)!important;
+   min-height:0!important;
+   max-height:calc(100svh - var(--snrg-nav-height,88px) - 12px)!important;
+   overflow:hidden!important;
+   margin:0!important;
+   padding:0!important;
+ }
+ html body header.hero .logo-mask > a {
+   display:block!important;
+   flex:0 0 auto!important;
+   width:96vw!important;
+   max-width:100%!important;
+   line-height:0!important;
+ }
+ html body header.hero img.hero-logo {
+   display:block!important;
+   width:96vw!important;
+   max-width:100%!important;
+   height:auto!important;
+   aspect-ratio:1/1!important;
+   margin:0!important;
+ }
+ html body section.pricing {
+   margin-top:0!important;
+   padding-top:clamp(20px,4svh,34px)!important;
+   opacity:1!important;
+   visibility:visible!important;
+ }
+ html body section.pricing .section-title.pricing-hero {
+   opacity:1!important;
+   visibility:visible!important;
+   transform:none!important;
+   animation:none!important;
+   margin-top:0!important;
+ }
 }
-
 </style>
 <meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
 <meta name="author" content="Bobby Frilot III"/>
