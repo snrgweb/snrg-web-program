@@ -206,6 +206,58 @@ html body header.hero img.hero-logo {
     padding-top: 17px !important; padding-bottom:17px !important;
   }
 }
+
+/* MOBILE HERO PRECISION FIX — image file has built-in blank margins.
+   Crop only the image's empty edges; retain the visible logo size.
+   Desktop/laptop styles are untouched. */
+@media screen and (max-width:767px) {
+  html body header.hero {
+    display:block !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    margin:var(--snrg-nav-height) 0 0 !important;
+    padding:clamp(6px,1.2svh,12px) 0 clamp(8px,1.6svh,16px) !important;
+    overflow:hidden !important;
+  }
+  html body header.hero > .container,
+  html body header.hero .hero-wrap,
+  html body header.hero .hero-stack,
+  html body header.hero .hero-logo-container {
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 auto !important;
+    padding:0 !important;
+  }
+  html body header.hero .logo-mask {
+    width:100% !important;
+    height:78vw !important;
+    min-height:0 !important;
+    max-height:calc(100svh - var(--snrg-nav-height) - 30px) !important;
+    margin:0 auto !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  html body header.hero .logo-mask > a {
+    flex:0 0 auto !important;
+    width:96vw !important;
+    max-width:100% !important;
+    line-height:0 !important;
+  }
+  html body header.hero img.hero-logo {
+    display:block !important;
+    width:96vw !important;
+    max-width:100% !important;
+    height:auto !important;
+    aspect-ratio:1/1 !important;
+    margin:0 !important;
+  }
+}
+
 </style>
 <meta name="description" content="Nashville web design for small businesses from SNRG WEB. Custom, mobile-first websites from $89/month with technical SEO, hosting, analytics, support, and 5–7 business day launches."/>
 <meta name="author" content="Bobby Frilot III"/>
