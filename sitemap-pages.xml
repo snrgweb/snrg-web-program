@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://snrgweb.com/</loc>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
-    <loc>https://snrgweb.com/pricing</loc>
+    <loc>https://snrgweb.com/contact</loc>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
-    <loc>https://snrgweb.com/booking/</loc>
+    <loc>https://snrgweb.com/booking</loc>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
-    <loc>https://snrgweb.com/contact/</loc>
-  </url>
-  <url>
-    <loc>https://snrgweb.com/faq/</loc>
+    <loc>https://snrgweb.com/faq</loc>
   </url>
   <url>
     <loc>https://snrgweb.com/bobby-frilot/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 </urlset>
